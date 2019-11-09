@@ -41,9 +41,7 @@ wget -c https://github.com$VER >/dev/null 2>&1
   compile_error
   tar -xvzf *ubuntu16_daemon.tar.gz >/dev/null 2>&1
 
-cd /root/*ubuntu16_daemon/usr/bin/ >/dev/null 2>&1
-
-cd /root/*ubuntu16_daemon/usr/bin/ >/dev/null 2>&1
+cd /root/*ubuntu16_daemon/ >/dev/null 2>&1
 chmod +x $COIN_DAEMON $COIN_CLI >/dev/null 2>&1
 
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
@@ -98,6 +96,7 @@ echo -e "Setup snapshot, please wait untill finished"
 cd $CONFIGFOLDER >/dev/null 2>&1
 
 wget -c https://github.com/BareCrypto/bare-core/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
+
 echo -e "extract bootstrap processing"
 unzip bootstrap.zip >/dev/null 2>&1
 compile_error

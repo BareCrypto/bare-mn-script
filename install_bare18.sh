@@ -240,7 +240,7 @@ if [ "$?" -gt "0" ];
   then
     echo -e "${RED}Not all required packages were installed properly. Try to install them manually by running the following commands:${NC}\n"
     echo "apt-get update"
-    echo "apt -y install software-properties-common"
+    echo "apt install -y software-properties-common"
     echo "apt-add-repository -y ppa:bitcoin/bitcoin"
     echo "apt-get update"
     echo "apt install -y make build-essential libtool software-properties-common autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev \
@@ -282,7 +282,8 @@ function setup_node() {
   important_information
 }
 
-function add_swap {
+function add_swap() {
+  echo -e "Installing Swap file."
   dd if=/dev/zero of=/swap.img bs=2048 
   chmod 600 /var/swap.img
   mkswap /var/swap.img
@@ -302,6 +303,7 @@ read INSTALL
 if [[ $INSTALL =~ "Y"|"y" ]] ; then
 prepare_system
 fi
+echo "Do you want install a 2GB swapfile? [y/n]"
 read SWAP
 if [[ $SWAP =~ "Y"|"y" ]] ; then
 add_swap

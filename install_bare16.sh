@@ -97,7 +97,7 @@ function snapshot_sync() {
 echo -e "Setup snapshot, please wait untill finished"
 cd $CONFIGFOLDER >/dev/null 2>&1
 
-wget -c https://github.com/BareCrypto/bare-core/releases/latest/bootstrap.zip >/dev/null 2>&1
+wget -c https://github.com/BareCrypto/bare-core/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
 echo -e "extract bootstrap processing"
 unzip bootstrap.zip >/dev/null 2>&1
 compile_error

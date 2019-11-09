@@ -79,8 +79,7 @@ to generate needed keys
 - run script with
 
 		sudo bash install_bare16.sh 
-or 
-
+		or 
 		sudo bash install_bare18.sh
 	
 7 if ready check state of blockchain with 

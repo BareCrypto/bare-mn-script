@@ -284,11 +284,11 @@ function setup_node() {
 
 function add_swap() {
   echo -e "Installing Swap file."
-  dd if=/dev/zero of=/swap.img bs=2048 
-  chmod 600 /var/swap.img
-  mkswap /var/swap.img
-  swapon /var/swap.img
-  echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
+  fallocate -l 2G /var/swapfile
+  chmod 600 /var/swapfile
+  mkswap /var/swapfile
+  swapon /var/swapfile
+  echo "/var/swapfile none swap sw 0 0" >> /etc/fstab
   sysctl vm.swappiness=20
   echo "vm.swappiness=20" >> /etc/sysctl.conf
 }

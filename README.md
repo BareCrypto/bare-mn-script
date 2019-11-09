@@ -15,18 +15,23 @@
 3 Deploy new instance:
 	
 - use Cloud Compute
+
 ![](img/vultr01.PNG)
 	
 - choose location
+
 ![](img/vultr02.PNG)
 	
 - select server type (Ubuntu 16.04 or 18.04)
+
 ![](img/vultr03.PNG)
 	
 - select size
+
 ![](img/vultr04.PNG)
 	
 - finaly deploy now
+
 ![](img/vultr05.PNG)
 		
 - this server can host more than one coin node, 
@@ -35,17 +40,21 @@
 4 Now we go to BARE wallet:
 
 - create a receivement:
+
 ![](img/wallet01.PNG)
 	
 - copy address from next screen:
+
 ![](img/wallet02.PNG)
 	
 - send collateral of 1,000 BARE (you need around 0.0006 BARE as tx fee)
+
 ![](img/wallet03.PNG)
 	
 - wait for minimum 6 blocks to confirm transaction
 	
 - now open debug console:
+
 ![](img/wallet04.PNG)
 	
 - enter following commands:
@@ -74,6 +83,7 @@ to generate needed keys
 to check Sync Completed TRUE.
 	
 8	go to your masternode.conf file
+
 ![](img/wallet05.PNG)
 	
 insert all given data from debug console and vps in this sheme:
@@ -93,6 +103,7 @@ save and close file.
 		masternode start-alias false ALIAS
 	
 11 Masternode tab shows now your node
+
 ![](img/wallet08.PNG)
 	
 12 Wait around 5 minutes to check on VPS with

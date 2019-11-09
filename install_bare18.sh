@@ -282,6 +282,15 @@ function setup_node() {
   important_information
 }
 
+function add_swap {
+  dd if=/dev/zero of=/swap.img bs=2048 
+  chmod 600 /var/swap.img
+  mkswap /var/swap.img
+  swapon /var/swap.img
+  echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
+  sysctl vm.swappiness=20
+  echo "vm.swappiness=20" >> /etc/sysctl.conf
+}
 
 ##### Main #####
 clear
@@ -292,6 +301,10 @@ echo "Do you want to install all needed dependencies (no if you did it before)? 
 read INSTALL
 if [[ $INSTALL =~ "Y"|"y" ]] ; then
 prepare_system
+fi
+read SWAP
+if [[ $SWAP =~ "Y"|"y" ]] ; then
+add_swap
 fi
 download_node
 setup_node

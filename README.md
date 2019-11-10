@@ -10,11 +10,11 @@
 
 1 Register an account on [vultr](https://www.vultr.com/?ref=8316564-4F)
 
-2 Load account (first pay with creditcard, paypay, wechat or Alipay from second pay with Bitcoin too)
+2 Load account (first pay with CreditCard, PayPal, WeChat or Alipay from second pay with Bitcoin too)
 
 3 Deploy new instance:
 	
-- use Cloud Compute
+- use cloud compute
 
 ![](img/vultr01.PNG)
 	
@@ -122,4 +122,5 @@ save and close file.
 feel free to donate a coffee ^^
 
 BARE: BRHpoWnrmoHB3uj7oAcZ39kkPZ5aJsYSkb
+
 BTC: 1NNYZUxfLHBXCC8HNoMXJwZ7LVzrKJZBR6

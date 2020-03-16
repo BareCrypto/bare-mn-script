@@ -2,13 +2,13 @@
 
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='bare.conf'
-CONFIGFOLDER='/root/.bare'
+CONFIGFOLDER='/root/.barev2'
 COIN_DAEMON='bared'
 COIN_CLI='bare-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_NAME='bare'
-COIN_PORT=27003
-RPC_PORT=27004
+COIN_PORT=32201
+RPC_PORT=32202
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -36,7 +36,7 @@ function download_node() {
   #rm $COIN_ZIP >/dev/null 2>&1
   cd /root/ >/dev/null 2>&1
 
-VER=$(wget -qO- https://github.com/BareCrypto/bare-core/releases/latest | grep -P /BareCrypto/bare-core/releases/download/.*ubuntu16_daemon.tar.gz | grep -Po '(?<=href=")[^"]*')
+VER=$(wget -qO- https://github.com/BareCrypto/BARE-coin/releases/latest | grep -P /BareCrypto/BARE-coin/releases/download/.*ubuntu16_daemon.tar.gz | grep -Po '(?<=href=")[^"]*')
 wget -c https://github.com$VER >/dev/null 2>&1
   compile_error
   tar -xvzf *ubuntu16_daemon.tar.gz >/dev/null 2>&1
@@ -95,7 +95,7 @@ function snapshot_sync() {
 echo -e "Setup snapshot, please wait untill finished"
 cd $CONFIGFOLDER >/dev/null 2>&1
 
-wget -c https://github.com/BareCrypto/bare-core/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
+wget -c https://github.com/BareCrypto/BARE-coin/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
 
 echo -e "extract bootstrap processing"
 unzip bootstrap.zip >/dev/null 2>&1
@@ -273,7 +273,7 @@ function important_information() {
 function setup_node() {
   get_ip
   create_config
-  snapshot_sync  
+    #snapshot_sync  
   create_key
   update_config
   enable_firewall

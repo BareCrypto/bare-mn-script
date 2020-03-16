@@ -94,11 +94,11 @@ to check Sync Completed TRUE.
 	
 insert all given data from debug console and vps in this sheme:
 	
-		ALIAS IP:27003 masternodegenkey masternodeoutput index
+		ALIAS IP:32201 masternodegenkey masternodeoutput index
 	
 looks like this:
 	
-		mn1 127.0.0.2:27003 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
+		mn1 127.0.0.2:32201 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
 			
 save and close file.
 
@@ -121,6 +121,6 @@ save and close file.
 
 feel free to donate a coffee ^^
 
-BARE: BRHpoWnrmoHB3uj7oAcZ39kkPZ5aJsYSkb
+BARE: BTW1jNsWEV2NYatdvYxLvfN4basMaCAo5e
 
 BTC: 1NNYZUxfLHBXCC8HNoMXJwZ7LVzrKJZBR6

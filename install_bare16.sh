@@ -36,10 +36,10 @@ function download_node() {
   #rm $COIN_ZIP >/dev/null 2>&1
   cd /root/ >/dev/null 2>&1
 
-VER=$(wget -qO- https://github.com/BareCrypto/BARE-coin/releases/latest | grep -P /BareCrypto/BARE-coin/releases/download/.*ubuntu16_daemon.tar.gz | grep -Po '(?<=href=")[^"]*')
+VER=$(wget -qO- https://github.com/BareCrypto/BARE-coin/releases/latest | grep -P /BareCrypto/BARE-coin/releases/download/.*ubuntu16_daemon.tar.xz | grep -Po '(?<=href=")[^"]*')
 wget -c https://github.com$VER >/dev/null 2>&1
   compile_error
-  tar -xvzf *ubuntu16_daemon.tar.gz >/dev/null 2>&1
+  tar -xf *ubuntu16_daemon.tar.xz >/dev/null 2>&1
 
 cd /root/*ubuntu16_daemon/ >/dev/null 2>&1
 chmod +x $COIN_DAEMON $COIN_CLI >/dev/null 2>&1

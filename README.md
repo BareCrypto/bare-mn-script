@@ -68,19 +68,14 @@ to generate needed keys
 [help](https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/)
 
 6 download script: 
-- Ubuntu 16.04:
+- Ubuntu 16.04, 18.04 or 20.04:
 	
-		wget https://raw.githubusercontent.com/BareCrypto/bare-mn-script/master/install_bare16.sh
+		wget https://raw.githubusercontent.com/BareCrypto/bare-mn-script/master/install_masternode.sh
 
-- Ubuntu 18.04:
-	
-		wget https://raw.githubusercontent.com/BareCrypto/bare-mn-script/master/install_bare18.sh
 
 - run script with
 
-		sudo bash install_bare16.sh 
-		or 
-		sudo bash install_bare18.sh
+		sudo bash install_masternode.sh
 	
 7 if ready check state of blockchain with 
 
@@ -123,4 +118,4 @@ feel free to donate a coffee ^^
 
 BARE: BTW1jNsWEV2NYatdvYxLvfN4basMaCAo5e
 
-BTC: 1NNYZUxfLHBXCC8HNoMXJwZ7LVzrKJZBR6
+BTC: 3GyAhqbMRzoeeH29yKZ3yFfAw8FvCuHUdT

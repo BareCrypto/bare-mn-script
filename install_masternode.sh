@@ -36,17 +36,17 @@ function download_node() {
   #rm $COIN_ZIP >/dev/null 2>&1
   cd /root/ >/dev/null 2>&1
 
-VER=$(wget -qO- https://github.com/BareCrypto/BARE-coin/releases/latest | grep -P /BareCrypto/BARE-coin/releases/download/.*ubuntu18_daemon.tar.xz | grep -Po '(?<=href=")[^"]*')
+VER=$(wget -qO- https://github.com/BareCrypto/BARE-coin/releases/latest | grep -P /BareCrypto/BARE-coin/releases/download/.*-x86_64-pc-linux-gnu.tar.gz | grep -Po '(?<=href=")[^"]*')
 wget -c https://github.com$VER >/dev/null 2>&1
   compile_error
-  tar -xf *ubuntu18_daemon.tar.xz >/dev/null 2>&1
+  tar -xfvz *-x86_64-pc-linux-gnu.tar.gz >/dev/null 2>&1
 
-cd /root/*ubuntu18_daemon/ >/dev/null 2>&1
+cd /root/*-x86_64-pc-linux-gnu.tar.gz/ >/dev/null 2>&1
 chmod +x $COIN_DAEMON $COIN_CLI >/dev/null 2>&1
 
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd - >/dev/null 2>&1
-  rm -R *ubuntu18_daemon >/dev/null 2>&1
+  rm -R *-x86_64-pc-linux-gnu.tar.gz >/dev/null 2>&1
   clear
 }
 
@@ -95,7 +95,7 @@ function snapshot_sync() {
 echo -e "Setup snapshot, please wait untill finished"
 cd $CONFIGFOLDER >/dev/null 2>&1
 
-wget -c https://github.com/BareCrypto/bare-core/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
+wget -c https://github.com/BareCrypto/BARE-coin/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
 
 echo -e "extract bootstrap processing"
 unzip bootstrap.zip >/dev/null 2>&1
@@ -149,7 +149,7 @@ function update_config() {
 
   cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
 logintimestamps=1
-maxconnections=128
+maxconnections=256
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
@@ -207,8 +207,8 @@ fi
 
 
 function checks() {
-if [[ $(lsb_release -d) != *18.04* ]]; then
-  echo -e "${RED}You are not running Ubuntu 18.04. Installation is cancelled.${NC}"
+if [[ $(lsb_release -d) != *16.04*, *18.04*, *20.04* ]]; then
+  echo -e "${RED}You are not running Ubuntu 16.04, 18.04 or 20.04 LTS version. Installation is cancelled.${NC}"
   exit 1
 fi
 
@@ -265,7 +265,7 @@ function important_information() {
  echo -e "Please check ${RED}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
  echo -e "Use ${RED}$COIN_CLI getinfo${NC} to check getinfo."
  echo -e "Use ${RED}$COIN_CLI mnsync status${NC} to check Sync Completed TRUE."
- echo -e "Use ${RED}$COIN_CLI masternode status${NC} to check your Masternode status."
+ echo -e "Use ${RED}$COIN_CLI getmasternode status${NC} to check your Masternode status."
  echo -e "${BLUE}================================================================================================================================${NC}" 
  echo -e "${YELLOW}Thank you for your donation. "
  echo -e "BARE: BRHpoWnrmoHB3uj7oAcZ39kkPZ5aJsYSkb "

@@ -93,9 +93,9 @@ EOF
 
 function snapshot_sync() {
 echo -e "Setup snapshot, please wait untill finished"
-cd $CONFIGFOLDER >/dev/null 2>&1
+cd ~/$CONFIGFOLDER/ >/dev/null 2>&1
 
-wget -c https://github.com/BareCrypto/BARE-coin/releases/download/v1.1.1.0/bootstrap.zip >/dev/null 2>&1
+wget -c https://github.com/BareCrypto/BARE-coin/releases/download/v2.0.1.0/bootstrap.zip >/dev/null 2>&1
 
 echo -e "extract bootstrap processing"
 unzip bootstrap.zip >/dev/null 2>&1
@@ -277,7 +277,7 @@ function important_information() {
 function setup_node() {
   get_ip
   create_config
-    #snapshot_sync  
+  snapshot_sync  
   create_key
   update_config
   enable_firewall

@@ -59,13 +59,10 @@ After=network.target
 [Service]
 User=root
 Group=root
-
 Type=forking
 #PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
-
 ExecStart=$COIN_PATH$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
 ExecStop=-$COIN_PATH$COIN_CLI -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER stop
-
 Restart=always
 PrivateTmp=true
 TimeoutStopSec=60s
@@ -153,11 +150,10 @@ maxconnections=256
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
-
 #ADDNODES
 addnode=5.45.105.212
-addnode=185.45.192.24
-addnode=185.117.72.160
+addnode=92.60.46.7
+addnode=92.60.46.8
 addnode=185.198.57.106
 EOF
 }
@@ -207,10 +203,6 @@ fi
 
 
 function checks() {
-if [[ $(lsb_release -d) != *16.04*, *18.04*, *20.04* ]]; then
-  echo -e "${RED}You are not running Ubuntu 16.04, 18.04 or 20.04 LTS version. Installation is cancelled.${NC}"
-  exit 1
-fi
 
 if [[ $EUID -ne 0 ]]; then
    echo -e "${RED}$0 must be run as root.${NC}"
